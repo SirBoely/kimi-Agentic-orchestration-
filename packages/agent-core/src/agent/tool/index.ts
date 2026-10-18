@@ -870,6 +870,9 @@ export class ToolManager {
           ),
         toolServices?.webSearcher && new b.WebSearchTool(toolServices.webSearcher),
         toolServices?.urlFetcher && new b.FetchURLTool(toolServices.urlFetcher),
+        this.agent.experimentalFlags.enabled('zapier') &&
+          toolServices?.zapierActions &&
+          new b.ZapierActionTool(toolServices.zapierActions),
       ]
         .filter((tool) => !!tool)
         .map((tool) => [tool.name, tool] as const),

@@ -41,6 +41,15 @@ export const FLAG_DEFINITIONS = [
     default: false,
     surface: 'core',
   },
+  {
+    id: 'zapier',
+    title: 'Zapier actions',
+    description:
+      'Expose the ZapierAction tool, letting the agent list and run actions on the 9,000+ apps connected through the Zapier SDK. Requires a one-time `npx zapier-sdk login`.',
+    env: 'KIMI_CODE_EXPERIMENTAL_ZAPIER',
+    default: false,
+    surface: 'core',
+  },
 ] as const satisfies readonly FlagDefinitionInput[];
 
 /** Literal union of registered flag ids. */
